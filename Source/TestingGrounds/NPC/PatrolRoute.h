@@ -13,17 +13,10 @@ class TESTINGGROUNDS_API UPatrolRoute : public UActorComponent
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this component's properties
-	UPatrolRoute();
+	TArray<AActor*> GetPatrolPoints() const;
 
-protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-		
+private:
+	UPROPERTY(EditAnywhere, Category = "Patrol Route")
+	TArray<AActor*> PatrolPoints;
 	
 };
